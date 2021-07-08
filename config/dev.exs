@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :tanphat_gateway_api, TanphatGatewayApi.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "123456",
   database: "tanphat_gateway_api_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
