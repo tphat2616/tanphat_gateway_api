@@ -20,9 +20,13 @@ defmodule TanphatGatewayApiWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", TanphatGatewayApiWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", TanphatGatewayApiWeb do
+    pipe_through :api
+
+    get "/yahoo_finance/global_index", PageController, :global_index
+    get "/yahoo_finance/commodity_index", PageController, :commodity_index
+    get "/yahoo_finance/glo_and_com_index", PageController, :glo_and_com_index
+  end
 
   # Enables LiveDashboard only for development
   #
