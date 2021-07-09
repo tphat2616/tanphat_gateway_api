@@ -26,6 +26,8 @@ defmodule TanphatGatewayApiWeb.Router do
     get "/yahoo_finance/global_index", GlobalAndCommodityIndexController, :global_index
     get "/yahoo_finance/commodity_index", GlobalAndCommodityIndexController, :commodity_index
     get "/yahoo_finance/glo_and_com_index", GlobalAndCommodityIndexController, :glo_and_com_index
+    get "/auto-save", GlobalAndCommodityIndexController, :auto_save
+    get "/index", GlobalAndCommodityIndexController, :index_stat
   end
 
   # Enables LiveDashboard only for development

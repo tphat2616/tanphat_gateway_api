@@ -10,6 +10,13 @@ use Mix.Config
 config :tanphat_gateway_api,
   ecto_repos: [TanphatGatewayApi.Repo]
 
+config :tanphat_gateway_api, TanphatGatewayApi.Scheduler,
+  # debug_logging: false,
+  jobs: [
+    # Every 5 minutes
+    {"*/5 * * * *", {TanphatGatewayApi.GlobalAndCommodityIndexService, :update_global_and_commodity_index, []}}
+  ]
+
 # Configures the endpoint
 config :tanphat_gateway_api, TanphatGatewayApiWeb.Endpoint,
   url: [host: "localhost"],

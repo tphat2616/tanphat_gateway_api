@@ -14,7 +14,9 @@ defmodule TanphatGatewayApi.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: TanphatGatewayApi.PubSub},
       # Start the Endpoint (http/https)
-      TanphatGatewayApiWeb.Endpoint
+      TanphatGatewayApiWeb.Endpoint,
+      # Background jobs
+      TanphatGatewayApi.Scheduler
       # Start a worker by calling: TanphatGatewayApi.Worker.start_link(arg)
       # {TanphatGatewayApi.Worker, arg}
     ]
