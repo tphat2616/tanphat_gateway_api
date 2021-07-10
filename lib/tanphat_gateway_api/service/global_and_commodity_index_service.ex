@@ -193,13 +193,11 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
   def crawl_data_from_yahoo(body) do
     [_, _, data] ++ _ = String.split(body, "data-reactid=\"32\">")
     [index] ++ _ = String.split(data, "</span><span")
-    [_ | tl] = String.split(index, "data-reactid=\"33\">")
-    [hd | _] = tl
-    [_, _, _, data] ++ _ = String.split(body, "data-reactid=\"34\">")
+    [_, _, _, data] ++ _ = String.split(body, "data-reactid=\"33\">")
     [nevermind] ++ _ = String.split(data, ")</span>")
     [price_change, per] = String.split(nevermind, " (")
 
-    [hd, price_change, per]
+    [index, price_change, per]
   end
 end
   
