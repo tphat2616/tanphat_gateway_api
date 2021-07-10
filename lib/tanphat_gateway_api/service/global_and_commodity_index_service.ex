@@ -169,7 +169,7 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
 
   def snp_gsci_crude_oil do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCL?p=^SPGSCL&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/CL%3DF?p=CL%3DF", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
