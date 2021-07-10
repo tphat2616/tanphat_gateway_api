@@ -3,9 +3,9 @@ use Mix.Config
 # Configure your database
 config :tanphat_gateway_api, TanphatGatewayApi.Repo,
   username: "postgres",
-  password: "123456",
-  database: "tanphat_gateway_api_dev",
-  hostname: "localhost",
+  password: "09098237720aA@",
+  database: "tphat2616_api",
+  hostname: "51.79.165.79",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -16,7 +16,7 @@ config :tanphat_gateway_api, TanphatGatewayApi.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :tanphat_gateway_api, TanphatGatewayApiWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: 8000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

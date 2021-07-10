@@ -4,33 +4,27 @@
 # remember to add this file to your .gitignore.
 use Mix.Config
 
-database_url =
-  System.get_env("DATABASE_URL") ||
-    raise """
-    environment variable DATABASE_URL is missing.
-    For example: ecto://USER:PASS@HOST/DATABASE
-    """
-
 config :tanphat_gateway_api, TanphatGatewayApi.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  database: "",
-  ssl: true,
-  url: database_url,
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
-
-secret_key_base =
-  System.get_env("SECRET_KEY_BASE") ||
-    raise """
-    environment variable SECRET_KEY_BASE is missing.
-    You can generate one by calling: mix phx.gen.secret
-    """
+  username: "postgres",
+  password: "09098237720aA@",
+  database: "tphat2616_api",
+  hostname: "51.79.165.79",
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
 
 config :tanphat_gateway_api, TanphatGatewayApiWeb.Endpoint,
-  http: [
-    port: String.to_integer(System.get_env("PORT") || "4000"),
-    transport_options: [socket_opts: [:inet6]]
+  server: true,
+  url: [host: "tanphat.dev", theme: "https"],
+  https: [
+    port: 8080,
+    cipher_suite: :strong,
+    keyfile: "/etc/letsencrypt/live/tanphat.dev/privkey.pem",
+    certfile: "/etc/letsencrypt/live/tanphat.dev/cert.pem",
+    cacertfile: "/etc/letsencrypt/live/tanphat.dev/chain.pem"
   ],
-  secret_key_base: secret_key_base
+  secret_key_base: "VdEaZh0DFVDEeLHSzlKrMx5k/EmXSZPL1SUnUVo54SjfvvVf87FOcMFBS0KELNEF",
+  live_view: [signing_salt: "fOLDeUr4X"],
+  code_reloader: false
 
 # ## Using releases (Elixir v1.9+)
 #
