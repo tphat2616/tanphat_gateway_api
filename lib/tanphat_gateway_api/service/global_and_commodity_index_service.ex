@@ -78,126 +78,126 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
 
   def dji_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5EDJI/", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5EDJI/", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp500_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5EGSPC?p=^GSPC&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5EGSPC?p=^GSPC&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def nasdaq100_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ENDX?p=^NDX&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ENDX?p=^NDX&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def ftse100_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5EFTSE?p=^FTSE&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5EFTSE?p=^FTSE&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def euro50_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/UIV4.F?p=UIV4.F&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/UIV4.F?p=UIV4.F&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def nikkei255_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5EN225?p=^N225&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5EN225?p=^N225&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_gold do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSGC?p=^SPGSGC&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSGC?p=^SPGSGC&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_agri do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSAGTR?p=^SPGSAGTR&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSAGTR?p=^SPGSAGTR&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_gas_per_usd do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGPRGOT?p=^SPGPRGOT&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGPRGOT?p=^SPGPRGOT&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_wci do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPWCI?p=^SPWCI&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPWCI?p=^SPWCI&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_tr do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCITR?p=^SPGSCITR&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCITR?p=^SPGSCITR&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_enhanced_commodity_ind do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCIES?p=^SPGSCIES&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCIES?p=^SPGSCIES&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def dj_commodity_index_tr do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5EDJCIT?p=^DJCIT&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5EDJCIT?p=^DJCIT&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_crude_oil do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCL?p=^SPGSCL&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSCL?p=^SPGSCL&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_light_energy do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSLE?p=^SPGSLE&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSLE?p=^SPGSLE&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def dj_commodity_index do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5EDJCI?p=^DJCI&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5EDJCI?p=^DJCI&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_industrial_metals do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSIN?p=^SPGSIN&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSIN?p=^SPGSIN&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
 
   def snp_gsci_precious_metals do
     {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSPMP?p=^SPGSPMP&.tsrc=fin-srch", [], timeout: 20_000, recv_timeout: 20_000)
+      HTTPoison.get("https://finance.yahoo.com/quote/%5ESPGSPMP?p=^SPGSPMP&.tsrc=fin-srch", [], timeout: 40_000, recv_timeout: 40_000)
 
     crawl_data_from_yahoo(body)
   end
