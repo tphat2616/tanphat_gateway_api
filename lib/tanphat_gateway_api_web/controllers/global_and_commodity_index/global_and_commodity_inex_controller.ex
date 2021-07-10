@@ -43,16 +43,6 @@ defmodule TanphatGatewayApiWeb.GlobalAndCommodityIndexController do
     end
   end
 
-  def auto_save(conn, _) do
-    result = Poison.encode!(%{
-      status: "Sucessful!"
-    })
-    Index.auto_save_index()
-    conn
-    |> put_resp_content_type("application/json")
-    |> send_resp(200, result)
-  end
-
   def index_stat(conn, _) do
     try do
       result = Poison.encode!(Index.get_all())

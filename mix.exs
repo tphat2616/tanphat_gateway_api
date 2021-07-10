@@ -45,7 +45,6 @@ defmodule TanphatGatewayApi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:distillery, "~> 2.1"},
       {:httpoison, "~> 1.8"},
       {:poison, "~> 4.0"},
       {:quantum, "~> 3.0"}
