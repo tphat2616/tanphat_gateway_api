@@ -47,7 +47,8 @@ defmodule TanphatGatewayApi.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.8"},
       {:poison, "~> 4.0"},
-      {:quantum, "~> 3.0"}
+      {:quantum, "~> 3.0"},
+      {:logger_file_backend, "~> 0.0.11"}
     ]
   end
 

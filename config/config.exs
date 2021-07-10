@@ -11,11 +11,34 @@ config :tanphat_gateway_api,
   ecto_repos: [TanphatGatewayApi.Repo]
 
 config :tanphat_gateway_api, TanphatGatewayApi.Scheduler,
-  # debug_logging: false,
+  debug_logging: false,
   jobs: [
     # Every 5 minutes
     {"*/5 * * * *", {TanphatGatewayApi.GlobalAndCommodityIndexService, :update_global_and_commodity_index, []}}
   ]
+  
+config :logger,
+  backends: [
+    {LoggerFileBackend, :info_log},
+    {LoggerFileBackend, :debug_log},
+    {LoggerFileBackend, :error_log}
+  ]
+
+config :logger, :info_log,
+  path: Path.expand("debug/info.log"),
+  format: "\n$date $time $metadata[$level] $levelpad$message\n",
+  level: :info,
+  metadata: [:client_ip]
+
+config :logger, :debug_log,
+  path: Path.expand("debug/debug.log"),
+  format: "\n$date $time $metadata[$level] $levelpad$message\n",
+  level: :debug
+
+config :logger, :error_log,
+  path: Path.expand("debug/error.log"),
+  format: "\n$date $time $metadata[$level] $levelpad$message\n",
+  level: :error
 
 # Configures the endpoint
 config :tanphat_gateway_api, TanphatGatewayApiWeb.Endpoint,

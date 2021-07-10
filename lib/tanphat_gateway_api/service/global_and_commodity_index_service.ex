@@ -8,7 +8,7 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
   end
 
   def get_all() do
-    [hd | tl] = GlobalAndCommodityIndex
+    [hd | _tl] = GlobalAndCommodityIndex
     |> Repo.all()
     hd
   end
@@ -213,20 +213,20 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
   end
 
   def get_price(arr) do
-    [hd | tl] = arr
+    [hd | _tl] = arr
     hd
   end
 
   def get_price_24_change(arr) do
-    [hd | tl] = arr
-    [hd | tl] = tl
+    [_hd | tl] = arr
+    [hd | _tl] = tl
     hd
   end
 
   def get_rate_24_change(arr) do
-    [hd | tl] = arr
-    [hd | tl] = tl
-    [hd | tl] = tl
+    [_hd | tl] = arr
+    [_hd | tl] = tl
+    [hd | _tl] = tl
     hd
   end
 end
