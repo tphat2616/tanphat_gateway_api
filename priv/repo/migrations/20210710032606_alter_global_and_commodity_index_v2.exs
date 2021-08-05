@@ -2,7 +2,7 @@ defmodule TanphatGatewayApi.Repo.Migrations.AlterGlobalAndCommodityIndexV2 do
   use Ecto.Migration
 
   def change do
-    alter table "global_and_commodity_index" do
+    alter table("global_and_commodity_index") do
       remove :dji_index, :string
       remove :snp500_index, :string
       remove :nasdaq100_index, :string

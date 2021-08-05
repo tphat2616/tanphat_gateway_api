@@ -2,7 +2,7 @@ defmodule TanphatGatewayApi.Repo.Migrations.AddGlobalAndCommodityIndexTable do
   use Ecto.Migration
 
   def change do
-    create table "global_and_commodity_index" do
+    create table("global_and_commodity_index") do
       add :dji_index, :string
       add :snp500_index, :string
       add :nasdaq100_index, :string
@@ -21,7 +21,7 @@ defmodule TanphatGatewayApi.Repo.Migrations.AddGlobalAndCommodityIndexTable do
       add :dj_commodity_index, :string
       add :snp_gsci_industrial_metals, :string
       add :snp_gsci_precious_metals, :string
-  
+
       timestamps()
     end
   end
