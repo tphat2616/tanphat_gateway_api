@@ -14,6 +14,7 @@ config :tanphat_gateway_api, TanphatGatewayApi.Repo,
 
 config :tanphat_gateway_api, TanphatGatewayApiWeb.Endpoint,
   server: true,
+  http: [port: 8081],
   url: [host: "tanphat.dev", theme: "https"],
   https: [
     port: 8080,
