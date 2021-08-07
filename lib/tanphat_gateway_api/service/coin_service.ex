@@ -7,6 +7,14 @@ defmodule TanphatGatewayApi.CoinService do
     |> Repo.insert()
   end
 
+  def get_all() do
+    [hd | _tl] =
+      Coin
+      |> Repo.all()
+
+    hd
+  end
+
   def auto_update_coin() do
     [
       price: get_eth_price(get_eth_info())
