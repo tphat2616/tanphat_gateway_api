@@ -4,15 +4,14 @@ defmodule TanphatGatewayApiWeb.EthereumController do
 
   def eth_burned(conn, _) do
     try do
-    result =
-      Poison.encode!(%{
-        "Total burned": EthereumBurnedService.eth_burned()
-      })
+      result =
+        Poison.encode!(%{
+          "Total burned": EthereumBurnedService.eth_burned()
+        })
 
-    conn
-    |> put_resp_content_type("application/json")
-    |> send_resp(200, result)
-
+      conn
+      |> put_resp_content_type("application/json")
+      |> send_resp(200, result)
     rescue
       _ ->
         conn

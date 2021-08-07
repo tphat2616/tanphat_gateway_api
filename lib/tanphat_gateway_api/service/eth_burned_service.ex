@@ -1,10 +1,8 @@
 defmodule TanphatGatewayApi.EthereumBurnedService do
   @spec eth_burned :: binary
   def eth_burned() do
-    {:ok, %HTTPoison.Response{body: body}} =
-      HTTPoison.get("https://ethburned.info/"
-      )
-      crawl_data_from_ethechain(body)
+    {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get("https://ethburned.info/")
+    crawl_data_from_ethechain(body)
   end
 
   @spec crawl_data_from_ethechain(binary) :: any

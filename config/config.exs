@@ -14,9 +14,11 @@ config :tanphat_gateway_api, TanphatGatewayApi.Scheduler,
   debug_logging: false,
   jobs: [
     # Every 5 minutes
-    {"*/5 * * * *", {TanphatGatewayApi.GlobalAndCommodityIndexService, :update_global_and_commodity_index, []}}
+    {"*/5 * * * *", {TanphatGatewayApi.CoinService, :update_coin, []}},
+    {"*/5 * * * *",
+     {TanphatGatewayApi.GlobalAndCommodityIndexService, :update_global_and_commodity_index, []}}
   ]
-  
+
 config :logger,
   backends: [
     {LoggerFileBackend, :info_log},

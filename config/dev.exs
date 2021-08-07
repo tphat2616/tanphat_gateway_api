@@ -16,7 +16,7 @@ config :tanphat_gateway_api, TanphatGatewayApi.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :tanphat_gateway_api, TanphatGatewayApiWeb.Endpoint,
-  http: [port: 8000],
+  http: [port: 8081],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

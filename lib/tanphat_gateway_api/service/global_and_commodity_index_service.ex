@@ -38,43 +38,9 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
       snp_gsci_gold_price: get_price(snp_gsci_gold()),
       snp_gsci_gold_price_24h_change: get_price_24_change(snp_gsci_gold()),
       snp_gsci_gold_rate_24h_change: get_rate_24_change(snp_gsci_gold()),
-      snp_gsci_agri_price: get_price(snp_gsci_agri()),
-      snp_gsci_agri_price_24h_change: get_price_24_change(snp_gsci_agri()),
-      snp_gsci_agri_rate_24h_change: get_rate_24_change(snp_gsci_agri()),
-      snp_gsci_gas_per_price: get_price(snp_gsci_gas_per_usd()),
-      snp_gsci_gas_per_price_24h_change: get_price_24_change(snp_gsci_gas_per_usd()),
-      snp_gsci_gas_per_rate_24h_change: get_rate_24_change(snp_gsci_gas_per_usd()),
-      snp_wci_price: get_price(snp_wci()),
-      snp_wci_price_24h_change: get_price_24_change(snp_wci()),
-      snp_wci_rate_24h_change: get_rate_24_change(snp_wci()),
-      snp_gsci_tr_price: get_price(snp_gsci_tr()),
-      snp_gsci_tr_price_24h_change: get_price_24_change(snp_gsci_tr()),
-      snp_gsci_tr_rate_24h_change: get_rate_24_change(snp_gsci_tr()),
-      snp_gsci_enhanced_commodity_ind_price: get_price(snp_gsci_enhanced_commodity_ind()),
-      snp_gsci_enhanced_commodity_ind_price_24h_change:
-        get_price_24_change(snp_gsci_enhanced_commodity_ind()),
-      snp_gsci_enhanced_commodity_ind_rate_24h_change:
-        get_rate_24_change(snp_gsci_enhanced_commodity_ind()),
-      dj_commodity_index_tr_price: get_price(dj_commodity_index_tr()),
-      dj_commodity_index_tr_price_24h_change: get_price_24_change(dj_commodity_index_tr()),
-      dj_commodity_index_tr_rate_24h_change: get_rate_24_change(dj_commodity_index_tr()),
       snp_gsci_crude_oil_price: get_price(snp_gsci_crude_oil()),
       snp_gsci_crude_oil_price_24h_change: get_price_24_change(snp_gsci_crude_oil()),
-      snp_gsci_crude_oil_rate_24h_change: get_rate_24_change(snp_gsci_crude_oil()),
-      snp_gsci_light_energy_price: get_price(snp_gsci_light_energy()),
-      snp_gsci_light_energy_price_24h_change: get_price_24_change(snp_gsci_light_energy()),
-      snp_gsci_light_energy_rate_24h_change: get_rate_24_change(snp_gsci_light_energy()),
-      dj_commodity_index_price: get_price(dj_commodity_index()),
-      dj_commodity_index_price_24h_change: get_price_24_change(dj_commodity_index()),
-      dj_commodity_index_rate_24h_change: get_rate_24_change(dj_commodity_index()),
-      snp_gsci_industrial_metals_price: get_price(snp_gsci_industrial_metals()),
-      snp_gsci_industrial_metals_price_24h_change:
-        get_price_24_change(snp_gsci_industrial_metals()),
-      snp_gsci_industrial_metals_rate_24h_change:
-        get_rate_24_change(snp_gsci_industrial_metals()),
-      snp_gsci_precious_metals_price: get_price(snp_gsci_precious_metals()),
-      snp_gsci_precious_metals_price_24h_change: get_price_24_change(snp_gsci_precious_metals()),
-      snp_gsci_precious_metals_rate_24h_change: get_rate_24_change(snp_gsci_precious_metals())
+      snp_gsci_crude_oil_rate_24h_change: get_rate_24_change(snp_gsci_crude_oil())
     ]
   end
 
@@ -263,9 +229,9 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
   end
 
   def crawl_data_from_yahoo(body) do
+    [_, _, data] ++ _ = String.split(body, "data-reactid=\"31\">")
+    [index] ++ _ = String.split(data, "</span>")
     [_, _, data] ++ _ = String.split(body, "data-reactid=\"32\">")
-    [index] ++ _ = String.split(data, "</span><span")
-    [_, _, _, data] ++ _ = String.split(body, "data-reactid=\"33\">")
     [nevermind] ++ _ = String.split(data, ")</span>")
     [price_change, per] = String.split(nevermind, " (")
 
