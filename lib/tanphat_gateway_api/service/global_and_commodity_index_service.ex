@@ -229,7 +229,7 @@ defmodule TanphatGatewayApi.GlobalAndCommodityIndexService do
   end
 
   def crawl_data_from_yahoo(body) do
-    [_, _, data] ++ _ = String.split(body, "data-reactid=\"31\">")
+    [_, _, _,data] ++ _ = String.split(body, "data-reactid=\"31\">")
     [index] ++ _ = String.split(data, "</span>")
     [_, _, data] ++ _ = String.split(body, "data-reactid=\"32\">")
     [nevermind] ++ _ = String.split(data, ")</span>")
